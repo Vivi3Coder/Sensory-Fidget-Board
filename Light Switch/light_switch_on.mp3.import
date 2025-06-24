@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://h8idif0mptim"
+path="res://.godot/imported/light_switch_on.mp3-ff0f3c2385a3388f819dc5d7196556cc.mp3str"
+
+[deps]
+
+source_file="res://Light Switch/light_switch_on.mp3"
+dest_files=["res://.godot/imported/light_switch_on.mp3-ff0f3c2385a3388f819dc5d7196556cc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

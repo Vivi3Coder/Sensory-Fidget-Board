@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdapncubr0nqe"
+path="res://.godot/imported/spinning_effect.mp3-e19ef7522d3391d0dcbef8c21c205b52.mp3str"
+
+[deps]
+
+source_file="res://Fidget Spinner/spinning_effect.mp3"
+dest_files=["res://.godot/imported/spinning_effect.mp3-e19ef7522d3391d0dcbef8c21c205b52.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

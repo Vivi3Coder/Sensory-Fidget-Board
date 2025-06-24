@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://bmxuxrs2gul8j"]
+
+[ext_resource type="Texture2D" uid="uid://cfp4bv7cbyt2s" path="res://Wooden_Board.png" id="1_tjn2e"]
+[ext_resource type="Texture2D" uid="uid://msct85umf8cc" path="res://Light Switch/NEWoff.png" id="2_4sclt"]
+[ext_resource type="Texture2D" uid="uid://cq0aqj0cqneo" path="res://Light Switch/ToggledOn.png" id="2_7a4el"]
+[ext_resource type="Script" uid="uid://l08ibnyb6wcx" path="res://Light Switch/light_switch.gd" id="3_4sclt"]
+[ext_resource type="Texture2D" uid="uid://cq3nolvuesd6n" path="res://Light Switch/ToggledOff.png" id="3_kwhh3"]
+[ext_resource type="AudioStream" uid="uid://h8idif0mptim" path="res://Light Switch/light_switch_on.mp3" id="4_ue4rx"]
+[ext_resource type="AudioStream" uid="uid://dp2611llp4fel" path="res://Light Switch/light_switch_off.mp3" id="5_sjiej"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4sclt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7a4el"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7a4el"]
+texture = ExtResource("2_7a4el")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwhh3"]
+texture = ExtResource("3_kwhh3")
+
+[node name="Main Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="WoodenBoard" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+scale = Vector2(1.125, 0.625)
+texture = ExtResource("1_tjn2e")
+metadata/_edit_lock_ = true
+
+[node name="LightSwitch" type="Sprite2D" parent="."]
+position = Vector2(251, 212)
+scale = Vector2(0.404615, 0.439136)
+texture = ExtResource("2_4sclt")
+script = ExtResource("3_4sclt")
+
+[node name="SwitchHitbox" type="Button" parent="LightSwitch"]
+custom_minimum_size = Vector2(60, 50)
+offset_left = -31.0
+offset_top = -78.0
+offset_right = 32.0
+offset_bottom = 74.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4sclt")
+toggle_mode = true
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="LSon" type="AudioStreamPlayer" parent="LightSwitch"]
+stream = ExtResource("4_ue4rx")
+
+[node name="LSoff" type="AudioStreamPlayer" parent="LightSwitch"]
+stream = ExtResource("5_sjiej")
+
+[node name="CheckButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 764.0
+offset_top = 272.0
+offset_right = 908.0
+offset_bottom = 404.0
+scale = Vector2(0.944377, 0.911165)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7a4el")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_7a4el")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kwhh3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7a4el")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kwhh3")
+toggle_mode = true
+
+[connection signal="toggled" from="LightSwitch/SwitchHitbox" to="LightSwitch" method="_on_switch_hitbox_toggled"]
