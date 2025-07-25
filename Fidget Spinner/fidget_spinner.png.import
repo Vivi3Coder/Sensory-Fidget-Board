@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5ef4ag0hgrd"
-path="res://.godot/imported/fidget_spinner.png-5e3511c92d9ea477581d4f9187ecdf1f.ctex"
+uid="uid://bb3o5h7g5t6a1"
+path="res://.godot/imported/Fidget_Spinner.png-28970540fa250baa6941d75fefe0455c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fidget Spinner/fidget_spinner.png"
-dest_files=["res://.godot/imported/fidget_spinner.png-5e3511c92d9ea477581d4f9187ecdf1f.ctex"]
+source_file="res://Fidget Spinner/Fidget_Spinner.png"
+dest_files=["res://.godot/imported/Fidget_Spinner.png-28970540fa250baa6941d75fefe0455c.ctex"]
 
 [params]
 
