@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc1xgq5pwc1m7"
-path="res://.godot/imported/Screenshot 2025-06-05 171712.png-a8347c8391fb77385615fea7104e78ca.ctex"
+uid="uid://c1smxf4i4k05c"
+path="res://.godot/imported/orange_button.png-21f2e3104673c3db2361056ef4ac2503.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Buttons/Screenshot 2025-06-05 171712.png"
-dest_files=["res://.godot/imported/Screenshot 2025-06-05 171712.png-a8347c8391fb77385615fea7104e78ca.ctex"]
+source_file="res://Buttons/orange_button.png"
+dest_files=["res://.godot/imported/orange_button.png-21f2e3104673c3db2361056ef4ac2503.ctex"]
 
 [params]
 

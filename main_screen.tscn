@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bmxuxrs2gul8j"]
+[gd_scene load_steps=18 format=3 uid="uid://bmxuxrs2gul8j"]
 
 [ext_resource type="Texture2D" uid="uid://cfp4bv7cbyt2s" path="res://Wooden_Board.png" id="1_tjn2e"]
 [ext_resource type="Texture2D" uid="uid://msct85umf8cc" path="res://Light Switch/NEWoff.png" id="2_4sclt"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://h8idif0mptim" path="res://Light Switch/light_switch_on.mp3" id="4_ue4rx"]
 [ext_resource type="AudioStream" uid="uid://dp2611llp4fel" path="res://Light Switch/light_switch_off.mp3" id="5_sjiej"]
 [ext_resource type="Script" uid="uid://c31ytq03id6qp" path="res://Fidget Spinner/fidget_spinner.gd" id="8_4sv2p"]
+[ext_resource type="PackedScene" uid="uid://cpdb3v33d7wy2" path="res://Buttons/rainbow_button.tscn" id="8_sj757"]
 [ext_resource type="Texture2D" uid="uid://bb3o5h7g5t6a1" path="res://Fidget Spinner/Fidget_Spinner.png" id="8_sjiej"]
 [ext_resource type="AudioStream" uid="uid://dvj4kyxqa8b1n" path="res://Fidget Spinner/fidget_spinner_click.wav" id="10_0osx7"]
 [ext_resource type="AudioStream" uid="uid://bulbyln1a7ygq" path="res://Fidget Spinner/New spinning effect.wav" id="11_62wn8"]
@@ -42,7 +43,7 @@ texture = ExtResource("1_tjn2e")
 metadata/_edit_lock_ = true
 
 [node name="LightSwitch" type="Sprite2D" parent="."]
-position = Vector2(251, 212)
+position = Vector2(329, 466)
 scale = Vector2(0.404615, 0.439136)
 texture = ExtResource("2_4sclt")
 script = ExtResource("3_4sclt")
@@ -65,11 +66,12 @@ stream = ExtResource("4_ue4rx")
 stream = ExtResource("5_sjiej")
 
 [node name="CheckButton" type="Button" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 764.0
-offset_top = 272.0
-offset_right = 908.0
-offset_bottom = 404.0
+offset_left = 517.0
+offset_top = 244.0
+offset_right = 661.0
+offset_bottom = 376.0
 scale = Vector2(0.944377, 0.911165)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7a4el")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_7a4el")
@@ -78,13 +80,20 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_7a4el")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kwhh3")
 toggle_mode = true
 
+[node name="RainbowButton" parent="." instance=ExtResource("8_sj757")]
+position = Vector2(200, 167)
+
+[node name="RainbowButton2" parent="." instance=ExtResource("8_sj757")]
+position = Vector2(859, 498)
+
 [node name="FidgetSpinner" type="RigidBody2D" parent="."]
-position = Vector2(473, 216)
+position = Vector2(553, 318)
 input_pickable = true
 gravity_scale = 0.0
 angular_damp_mode = 1
 angular_damp = 0.5
 script = ExtResource("8_4sv2p")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FidgetSpinner"]
 shape = SubResource("CircleShape2D_4sv2p")

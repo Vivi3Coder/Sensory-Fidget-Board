@@ -1,0 +1,79 @@
+[gd_scene load_steps=17 format=3 uid="uid://cpdb3v33d7wy2"]
+
+[ext_resource type="Script" uid="uid://cjyhae7gvxl21" path="res://Buttons/rainbow_button.gd" id="1_k5bjb"]
+[ext_resource type="Texture2D" uid="uid://cjksf7ytjky51" path="res://Buttons/black_button.png" id="1_yjmhy"]
+[ext_resource type="Texture2D" uid="uid://vuh2ruaxv2c5" path="res://Buttons/red_button.png" id="2_k5bjb"]
+[ext_resource type="AudioStream" uid="uid://bp2lkju7yc5j7" path="res://Buttons/Click.wav" id="2_t7pnh"]
+[ext_resource type="Texture2D" uid="uid://c1smxf4i4k05c" path="res://Buttons/orange_button.png" id="3_t7pnh"]
+[ext_resource type="Texture2D" uid="uid://yktugaydmug3" path="res://Buttons/yellow_button.png" id="4_pto4r"]
+[ext_resource type="Texture2D" uid="uid://ctbakw8gn22p8" path="res://Buttons/green_button.png" id="5_o4d6k"]
+[ext_resource type="Texture2D" uid="uid://duohtbsshcaoe" path="res://Buttons/light_blue_button.png" id="6_asptf"]
+[ext_resource type="Texture2D" uid="uid://cpa6lss1tghol" path="res://Buttons/dark_blue_button.png" id="7_7irhu"]
+[ext_resource type="Texture2D" uid="uid://c6dv4cijj48cp" path="res://Buttons/purple_button.png" id="8_2erv5"]
+[ext_resource type="Texture2D" uid="uid://q5yrrq3lgq08" path="res://Buttons/gray_button.png" id="9_cg4oy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k5bjb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t7pnh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pto4r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4d6k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_asptf"]
+
+[node name="RainbowButton" type="Node2D"]
+script = ExtResource("1_k5bjb")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_t7pnh")
+
+[node name="BlackButton" type="Sprite2D" parent="."]
+position = Vector2(-2, -1.5)
+texture = ExtResource("1_yjmhy")
+
+[node name="RedButton" type="Sprite2D" parent="."]
+position = Vector2(-2, 3.5)
+texture = ExtResource("2_k5bjb")
+
+[node name="OrangeButton" type="Sprite2D" parent="."]
+position = Vector2(-2, 3.5)
+scale = Vector2(1, 1.03333)
+texture = ExtResource("3_t7pnh")
+
+[node name="YellowButton" type="Sprite2D" parent="."]
+position = Vector2(-1, -3.5)
+texture = ExtResource("4_pto4r")
+
+[node name="GreenButton" type="Sprite2D" parent="."]
+position = Vector2(-4, 3.5)
+texture = ExtResource("5_o4d6k")
+
+[node name="LightBlueButton" type="Sprite2D" parent="."]
+position = Vector2(0, 3.5)
+texture = ExtResource("6_asptf")
+
+[node name="DarkBlueButton" type="Sprite2D" parent="."]
+position = Vector2(-1, 3.5)
+texture = ExtResource("7_7irhu")
+
+[node name="PurpleButton" type="Sprite2D" parent="."]
+position = Vector2(1, 3.5)
+texture = ExtResource("8_2erv5")
+
+[node name="GrayButton" type="Sprite2D" parent="."]
+position = Vector2(-2, 2.5)
+texture = ExtResource("9_cg4oy")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -31.0
+offset_top = -27.0
+offset_right = 30.0
+offset_bottom = 30.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k5bjb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_t7pnh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pto4r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_o4d6k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_asptf")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
