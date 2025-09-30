@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmbswrhytcfl4"]
+
+[ext_resource type="Script" uid="uid://bpephtxwsx6lx" path="res://Zipper Mouth/zipper_mouth.gd" id="1_5jdni"]
+[ext_resource type="Texture2D" uid="uid://bdhigkbwmprfy" path="res://Zipper Mouth/ZipperMouth.png" id="1_ym7pq"]
+[ext_resource type="AudioStream" uid="uid://cbspuut7w54c4" path="res://Zipper Mouth/ZipperSoundEffect.mp3" id="2_5jdni"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5jdni"]
+
+[sub_resource type="Animation" id="Animation_aw017"]
+resource_name = "Open"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZipperMouth:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_gilwo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZipperMouth:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8emu7"]
+_data = {
+&"Open": SubResource("Animation_aw017"),
+&"RESET": SubResource("Animation_gilwo")
+}
+
+[node name="ZipperMouth" type="Node2D"]
+script = ExtResource("1_5jdni")
+
+[node name="ZipperMouth" type="Sprite2D" parent="."]
+position = Vector2(379, 239)
+texture = ExtResource("1_ym7pq")
+hframes = 5
+vframes = 4
+frame = 7
+
+[node name="Button" type="Button" parent="ZipperMouth"]
+offset_left = -46.0
+offset_top = -39.0
+offset_right = 42.0
+offset_bottom = 44.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5jdni")
+flat = true
+
+[node name="ZipperSoundEffect" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(80, 189)
+stream = ExtResource("2_5jdni")
+pitch_scale = 1.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8emu7")
+}
+
+[connection signal="pressed" from="ZipperMouth/Button" to="." method="_on_button_pressed"]

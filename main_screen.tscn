@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bmxuxrs2gul8j"]
+[gd_scene load_steps=19 format=3 uid="uid://bmxuxrs2gul8j"]
 
 [ext_resource type="Texture2D" uid="uid://cfp4bv7cbyt2s" path="res://Wooden_Board.png" id="1_tjn2e"]
 [ext_resource type="Texture2D" uid="uid://msct85umf8cc" path="res://Light Switch/NEWoff.png" id="2_4sclt"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bb3o5h7g5t6a1" path="res://Fidget Spinner/Fidget_Spinner.png" id="8_sjiej"]
 [ext_resource type="AudioStream" uid="uid://dvj4kyxqa8b1n" path="res://Fidget Spinner/fidget_spinner_click.wav" id="10_0osx7"]
 [ext_resource type="AudioStream" uid="uid://bulbyln1a7ygq" path="res://Fidget Spinner/New spinning effect.wav" id="11_62wn8"]
+[ext_resource type="PackedScene" uid="uid://cmbswrhytcfl4" path="res://Zipper Mouth/zipper_mouth.tscn" id="13_ups6l"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4sclt"]
 
@@ -112,6 +113,8 @@ stream = ExtResource("10_0osx7")
 [node name="SpinSound" type="AudioStreamPlayer" parent="FidgetSpinner"]
 stream = ExtResource("11_62wn8")
 pitch_scale = 2.5
+
+[node name="ZipperMouth" parent="." instance=ExtResource("13_ups6l")]
 
 [connection signal="toggled" from="LightSwitch/SwitchHitbox" to="LightSwitch" method="_on_switch_hitbox_toggled"]
 [connection signal="input_event" from="FidgetSpinner" to="FidgetSpinner" method="_on_input_event"]
