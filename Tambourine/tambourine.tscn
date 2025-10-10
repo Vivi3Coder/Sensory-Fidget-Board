@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://xti8rekw7or3"]
+
+[ext_resource type="Script" uid="uid://da600hxtff0tt" path="res://Tambourine/tambourine.gd" id="1_4r6cb"]
+[ext_resource type="Texture2D" uid="uid://dk4ni6g7ycwcc" path="res://Tambourine/Tambourine.png" id="1_u0ckr"]
+[ext_resource type="AudioStream" uid="uid://cqfvffm3mmlrh" path="res://Tambourine/Tambourine Sound Effect.mp3" id="3_3jdpy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5b6k8"]
+
+[sub_resource type="Animation" id="Animation_4r6cb"]
+resource_name = "Shake"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tambourine:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.120428, 0.237365, 0.349066, 0.699877, 0.310669, 0.190241, 0.129154, 0.0680678, 0.00698132, -0.0541052, -0.115192, -0.176278, -0.237365, -0.359538, -0.23911, -0.179769, -0.0575959, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3jdpy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tambourine:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5b6k8"]
+_data = {
+&"RESET": SubResource("Animation_3jdpy"),
+&"Shake": SubResource("Animation_4r6cb")
+}
+
+[node name="Tambourine" type="Node2D"]
+script = ExtResource("1_4r6cb")
+
+[node name="Tambourine" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_u0ckr")
+
+[node name="Button" type="Button" parent="Tambourine"]
+offset_left = -191.667
+offset_top = -188.333
+offset_right = 188.333
+offset_bottom = 201.667
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5b6k8")
+flat = true
+
+[node name="TambourineSoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3jdpy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5b6k8")
+}
+
+[connection signal="pressed" from="Tambourine/Button" to="." method="_on_button_pressed"]
+[connection signal="finished" from="TambourineSoundEffect" to="." method="_on_tambourine_sound_effect_finished"]

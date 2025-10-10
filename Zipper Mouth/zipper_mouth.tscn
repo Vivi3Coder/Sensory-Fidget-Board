@@ -48,7 +48,6 @@ _data = {
 script = ExtResource("1_5jdni")
 
 [node name="ZipperMouth" type="Sprite2D" parent="."]
-position = Vector2(379, 239)
 texture = ExtResource("1_ym7pq")
 hframes = 5
 vframes = 4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bmxuxrs2gul8j"]
+[gd_scene load_steps=20 format=3 uid="uid://bmxuxrs2gul8j"]
 
 [ext_resource type="Texture2D" uid="uid://cfp4bv7cbyt2s" path="res://Wooden_Board.png" id="1_tjn2e"]
 [ext_resource type="Texture2D" uid="uid://msct85umf8cc" path="res://Light Switch/NEWoff.png" id="2_4sclt"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://dvj4kyxqa8b1n" path="res://Fidget Spinner/fidget_spinner_click.wav" id="10_0osx7"]
 [ext_resource type="AudioStream" uid="uid://bulbyln1a7ygq" path="res://Fidget Spinner/New spinning effect.wav" id="11_62wn8"]
 [ext_resource type="PackedScene" uid="uid://cmbswrhytcfl4" path="res://Zipper Mouth/zipper_mouth.tscn" id="13_ups6l"]
+[ext_resource type="PackedScene" uid="uid://xti8rekw7or3" path="res://Tambourine/tambourine.tscn" id="14_7sxnj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4sclt"]
 
@@ -44,7 +45,7 @@ texture = ExtResource("1_tjn2e")
 metadata/_edit_lock_ = true
 
 [node name="LightSwitch" type="Sprite2D" parent="."]
-position = Vector2(329, 466)
+position = Vector2(387, 244)
 scale = Vector2(0.404615, 0.439136)
 texture = ExtResource("2_4sclt")
 script = ExtResource("3_4sclt")
@@ -82,13 +83,14 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_kwhh3")
 toggle_mode = true
 
 [node name="RainbowButton" parent="." instance=ExtResource("8_sj757")]
-position = Vector2(200, 167)
+position = Vector2(906, 475)
+scale = Vector2(1.5, 1.5)
 
 [node name="RainbowButton2" parent="." instance=ExtResource("8_sj757")]
-position = Vector2(859, 498)
+position = Vector2(210, 164)
 
 [node name="FidgetSpinner" type="RigidBody2D" parent="."]
-position = Vector2(553, 318)
+position = Vector2(611, 394)
 input_pickable = true
 gravity_scale = 0.0
 angular_damp_mode = 1
@@ -115,6 +117,11 @@ stream = ExtResource("11_62wn8")
 pitch_scale = 2.5
 
 [node name="ZipperMouth" parent="." instance=ExtResource("13_ups6l")]
+position = Vector2(267, 452)
+scale = Vector2(1.5, 1.5)
+
+[node name="Tambourine" parent="." instance=ExtResource("14_7sxnj")]
+position = Vector2(835, 244)
 
 [connection signal="toggled" from="LightSwitch/SwitchHitbox" to="LightSwitch" method="_on_switch_hitbox_toggled"]
 [connection signal="input_event" from="FidgetSpinner" to="FidgetSpinner" method="_on_input_event"]
