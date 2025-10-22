@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dp2611llp4fel" path="res://Light Switch/light_switch_off.mp3" id="5_sjiej"]
 [ext_resource type="Script" uid="uid://c31ytq03id6qp" path="res://Fidget Spinner/fidget_spinner.gd" id="8_4sv2p"]
 [ext_resource type="PackedScene" uid="uid://cpdb3v33d7wy2" path="res://Buttons/rainbow_button.tscn" id="8_sj757"]
-[ext_resource type="Texture2D" uid="uid://bb3o5h7g5t6a1" path="res://Fidget Spinner/Fidget_Spinner.png" id="8_sjiej"]
+[ext_resource type="Texture2D" uid="uid://bb3o5h7g5t6a1" path="res://Fidget Spinner/fidget_spinner.png" id="8_sjiej"]
 [ext_resource type="AudioStream" uid="uid://dvj4kyxqa8b1n" path="res://Fidget Spinner/fidget_spinner_click.wav" id="10_0osx7"]
 [ext_resource type="AudioStream" uid="uid://bulbyln1a7ygq" path="res://Fidget Spinner/New spinning effect.wav" id="11_62wn8"]
 [ext_resource type="PackedScene" uid="uid://cmbswrhytcfl4" path="res://Zipper Mouth/zipper_mouth.tscn" id="13_ups6l"]
