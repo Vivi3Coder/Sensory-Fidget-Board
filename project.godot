@@ -13,9 +13,14 @@ config_version=5
 config/name="Sensory Fidget Board"
 run/main_scene="uid://bmxuxrs2gul8j"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://ipyasxp6w0d5"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

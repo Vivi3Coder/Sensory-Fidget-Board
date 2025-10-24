@@ -84,7 +84,6 @@ toggle_mode = true
 
 [node name="RainbowButton" parent="." instance=ExtResource("8_sj757")]
 position = Vector2(906, 475)
-scale = Vector2(1.5, 1.5)
 
 [node name="RainbowButton2" parent="." instance=ExtResource("8_sj757")]
 position = Vector2(210, 164)
